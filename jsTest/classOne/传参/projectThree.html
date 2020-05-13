@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta  http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title> 传参</title>
+        <style>
+            *{
+                margin: auto 0;
+                padding: 0;
+            }
+        </style>
+        <script>
+            var fun = function(a,b){
+                alert(a.value);
+                alert(b.value);
+            }
+            window.onload=function chuancan(){
+                
+                var inp = document.getElementsByTagName("input");
+                
+                var btn = document.getElementsByTagName("button")[0];
+                btn.onclick=function(){
+                    fun(inp[0],inp[1])
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <input value="参数1">
+        </div>
+        <div>
+            <input value="参数2">
+        </div>
+        
+        <div>
+            <button> 传参</button>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+    <hear>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>循环变色</title>
+        <style>
+            #div0{
+                width: 330;height: 100px;margin: 10px auto;
+            }
+            #div0 div{
+                width: 100px; height: 100px; margin: 0 5px;background: black;float: left;
+            }
+        </style>
+        <script>
+            window.onload = function(){
+                var oDiv = document.getElementById("div0").getElementsByTagName("div");
+                var btn = document.getElementsByTagName("button")[0];
+                btn.onclick = function(){
+                    // var coclor = changeColor();
+                    for(var i = 0; i < oDiv.length; i++) oDiv[i].style.background = changeColor();
+                }
+                function changeColor(){
+                    var col="rgb(";
+                    for(var i=0;i<3;i++){
+                        col+=Math.floor(Math.random()*256)+",";
+                    }
+                        col=col.slice(0,-1);
+                        col+=")";
+                    return col;
+                }
+            }
+        </script>
+    </hear>
+
+    <body>
+        <div id="div0">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <p style="text-align: center;"><button>点击变色</button></p>
+    </body>
+</html>

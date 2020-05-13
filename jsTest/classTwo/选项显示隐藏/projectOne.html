@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>选项显示隐藏</title>
+    <style>
+        body,
+        ul,
+        li,
+        button {
+            margin: 0;
+            padding: 0;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        #div1 {
+            width: 70px;
+            margin: 10 auto;
+        }
+
+        #ime {
+            margin-top: 5px;
+            background: #fff;
+            border: 1px solid #9a99ff;
+            display: none;
+        }
+
+        #ime li {
+
+            width: 100%;
+            line-height: 24px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        #close {
+            border-top: 1px solid #9a99ff;
+        }
+
+        #ime li a {
+            color: #00c;
+            padding: 0 5px;
+            display: block;
+            text-decoration: none;
+        }
+
+        #ime li a:hover {
+            background: #d9e1f6;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var btn = document.getElementsByTagName("button")[0];
+            var ime = document.getElementById("ime");
+            var close = document.getElementById("close");
+            var style = ime.style;
+
+            btn.onclick = function () {
+                style.display = style.display == "block" ? "none" : "block"
+                btn.className = style.display == "none" ? "open" : ""
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="div1">
+        <button>请选择</button>
+        <ul id="ime">
+            <li><a>选项一</a></li>
+            <li><a>选项二</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>
